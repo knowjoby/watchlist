@@ -46,6 +46,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px}
 <button data-f="all" aria-pressed="true">All</button>
 <button data-f="movie" aria-pressed="false">Movies</button>
 <button data-f="series" aria-pressed="false">Series</button>
+<button data-f="unsorted" aria-pressed="false">Not yet sorted</button>
 <button data-f="watching" aria-pressed="false">Watching</button>
 <button data-f="watched" aria-pressed="false">Watched</button>
 <button data-f="want" aria-pressed="false">Want to watch</button>
@@ -57,6 +58,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px}
 </main>
 <script>
 const label={want:"Want to watch",watching:"Watching",watched:"Watched"};
+const kind={series:"Series",movie:"Movie",unsorted:"Not yet sorted"};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 let items=[],f="all";
 function render(){
@@ -64,19 +66,19 @@ function render(){
   const hm=m=>m>=60?`${Math.floor(m/60)}h ${m%60}m`:`${m}m`;
   document.getElementById("grid").innerHTML=shown.map(i=>`<li class="card">
 ${i.poster?`<img class="poster" loading="lazy" referrerpolicy="no-referrer" src="${esc(i.poster)}" alt="" onerror="this.outerHTML='<div class=&quot;poster noposter&quot;>🎬</div>'">`:`<div class="poster noposter">🎬</div>`}
-<p class="kicker">${i.type==="series"?"Series":"Movie"}${i.platform?" · "+esc(i.platform):""}</p>
-<h2>${esc(i.title)}${i.year?` <small>${i.year}</small>`:""}</h2>
+<p class="kicker">${kind[i.type]||"Title"}${i.platform?" · "+esc(i.platform):""}${i.year?" · "+i.year:""}</p>
+<h2>${esc(i.title)}</h2>
 ${i.take?`<p>${esc(i.take)}</p>`:""}
 ${i.date||i.minutes?`<p class="stat">${[i.date,i.minutes?"▶ "+hm(i.minutes)+" played":"",i.progress!=null?i.progress+"% through":"",i.episodes?i.episodes+" ep"+(i.episodes>1?"s":"")+" finished":""].filter(Boolean).join(" · ")}</p>`:""}
 ${i.progress!=null?`<div class="bar" aria-hidden="true"><span style="width:${i.progress}%"></span></div>`:""}
-${i.status!=="logged"||i.rating?`<div class="meta">${i.status!=="logged"?`<span class="tag ${i.status}">${label[i.status]}</span>`:""}${i.rating?`<span class="stars" aria-label="${i.rating} of 5">${"★".repeat(i.rating)}${"☆".repeat(5-i.rating)}</span>`:""}</div>`:""}
+${i.status!=="logged"||i.rating?`<div class="meta">${i.status!=="logged"?`<span class="tag ${i.status}">${label[i.status]}</span>`:""}${i.rating?`<span class="stars" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}/10</span>`:""}</div>`:""}
 </li>`).join("");
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
 }
 document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{items=d.items||[];
-  document.querySelectorAll(".filters button").forEach(b=>{const v=b.dataset.f;if(["watching","watched","want"].includes(v)&&!items.some(i=>i.status===v))b.hidden=true});
+  document.querySelectorAll(".filters button").forEach(b=>{const v=b.dataset.f;if(["watching","watched","want","unsorted"].includes(v)&&!items.some(i=>i.status===v||i.type===v))b.hidden=true});
   const plats=[...new Set(items.map(i=>i.platform).filter(Boolean))].sort();
   plats.forEach(p=>{const b=document.createElement("button");b.textContent=p;b.dataset.p=p;b.setAttribute("aria-pressed","false");b.onclick=()=>{f="p:"+p;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};document.querySelector(".filters").append(b)});if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;render()}).catch(()=>render());
 </script>
