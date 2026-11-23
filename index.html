@@ -74,8 +74,9 @@ try{localStorage.removeItem("wl_token")}catch{}
 let items=[],tab="watching",type="all",plat="";
 const byDate=(a,b)=>(b.date||"").localeCompare(a.date||"")||a.title.localeCompare(b.title);
 const sorter=t=>t==="watched"?(a,b)=>(b.rating||0)-(a.rating||0)||byDate(a,b):byDate;
-// Watched means finished: show just the date — no progress bar, % or time played.
-const card=j=>{const i=j.status==="watched"?{...j,progress:null,minutes:null}:j;return card0(i)};
+// Watched (finished) and Want to watch (chosen in Obsidian) show just the date — no progress bar, % or time played.
+// Watching and On hold keep their progress.
+const card=j=>{const i=["watched","want"].includes(j.status)?{...j,progress:null,minutes:null,episodes:null}:j;return card0(i)};
 const card0=i=>`<li class="card st-${i.status}"><div class="pwrap">
 ${i.poster?`<img class="poster" loading="lazy" referrerpolicy="no-referrer" src="${esc(i.poster)}" alt="" onerror="this.outerHTML='<div class=&quot;poster noposter&quot;>🎬</div>'">`:`<div class="poster noposter">🎬</div>`}${i.rating?`<span class="score" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}<small>/10</small></span>`:""}</div>
 <p class="kicker">${kind[i.type]||"Title"}${i.platform?" · "+esc(i.platform):""}${i.year?" · "+i.year:""}</p>
