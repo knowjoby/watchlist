@@ -149,12 +149,14 @@
       "updated": "2026-11-23T17:48:28.160Z"
     },
     {
-      "title": "Dexter: Resurrection",
+      "title": "Dexter: Resurrection, Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-12",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5933f57c589e165463950e0fb25d590fcd50d7fa8238aa6fadbc8cc7ccc136f.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/07658548bb0fa2888f9b906f7a62c5bbaac62ca72863e9b00551f105897498a2.jpg",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:59:15.623Z"
     },
     {
       "title": "Final Table",
@@ -571,14 +573,6 @@
       "updated": "2026-11-23T17:28:14.161Z"
     },
     {
-      "title": "Time - Season 1",
-      "type": "series",
-      "status": "logged",
-      "platform": "Prime Video",
-      "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/ee20845399f9ddd0d2e950c91a4a5c174a48ce1311b0ca13e7eb7e490b07f965.jpg"
-    },
-    {
       "title": "Time",
       "type": "series",
       "status": "paused",
@@ -599,7 +593,7 @@
     {
       "title": "Masterplan",
       "type": "unsorted",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/6d0d1f4836544a45337d07a91ac2249fa69c3f2bcca9f24b8bf0664b022b5ada.png"
@@ -612,16 +606,6 @@
       "date": "2026-10-18",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5bfdfa03f97ccb8be70f7b2ad4955fbd725aa752084af75ac74a1a2926686c3.png",
       "updated": "2026-11-23T17:28:27.518Z"
-    },
-    {
-      "title": "Dexter: Resurrection, Season 1",
-      "type": "series",
-      "status": "paused",
-      "platform": "Prime Video",
-      "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/07658548bb0fa2888f9b906f7a62c5bbaac62ca72863e9b00551f105897498a2.jpg",
-      "rating": 10.0,
-      "updated": "2026-11-23T17:59:15.623Z"
     },
     {
       "title": "The Expanse - Season 4 (4K UHD)",
