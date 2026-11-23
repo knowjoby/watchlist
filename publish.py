@@ -28,10 +28,17 @@ RT_STATUS = {"want": "to-watch", "watching": "watching", "watched": "watched", "
 EDITS = REPO / "edits.json"
 
 
+READ_ERRORS = 0
+
+
 def frontmatter(path):
+    global READ_ERRORS
     try:
         f = path.open(encoding="utf-8")
-    except OSError:
+    except OSError as e:
+        READ_ERRORS += 1
+        if READ_ERRORS == 1:
+            print(f"Can't read {path.name}: {e}", file=sys.stderr)
         return {}
     with f:
         if f.readline().strip() != "---":
@@ -332,6 +339,10 @@ def main():
         print(f"{len(items)} titles", file=sys.stderr)
         return
     old = json.loads(OUT.read_text()).get("items") if OUT.exists() else None
+    if READ_ERRORS or (old and len(items) < len(old) * 0.6 and "--force" not in sys.argv):
+        print(f"Not publishing: {len(items)} titles vs {len(old or [])} before, {READ_ERRORS} unreadable notes "
+              "(vault offline or blocked?). Rerun with --force if the drop is real.")
+        sys.exit(1)
     if old == items:
         print("No changes.")
         return
