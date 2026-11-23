@@ -93,8 +93,9 @@ ${editor(i)}
 </li>`).join("");
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
-  document.getElementById("owner").innerHTML=token?`Editing as owner · <button id="signout">Sign out</button>`:`<button id="signin">Owner sign-in</button>`;
-  document.getElementById(token?"signout":"signin").onclick=token?signOut:signIn;
+  const showSignIn=location.hash==="#owner";
+  document.getElementById("owner").innerHTML=token?`Editing as owner · <button id="signout">Sign out</button>`:showSignIn?`<button id="signin">Owner sign-in</button>`:"";
+  const ob=document.getElementById(token?"signout":"signin");if(ob)ob.onclick=token?signOut:signIn;
 }
 const b64e=s=>btoa(unescape(encodeURIComponent(s))),b64d=s=>decodeURIComponent(escape(atob(s.replace(/\n/g,""))));
 const gh=(url,opt={})=>fetch(url,{...opt,headers:{Authorization:"Bearer "+token,Accept:"application/vnd.github+json",...(opt.headers||{})},cache:"no-store"});
@@ -123,6 +124,7 @@ async function saveEdit(k,w,v){
   }
   saving.delete(k);render();
 }
+window.addEventListener("hashchange",render);
 document.getElementById("grid").addEventListener("change",e=>{const s=e.target.closest("select[data-k]");if(s)saveEdit(s.dataset.k,s.dataset.w,s.value)});
 document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 Promise.all([fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()),fetch("edits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{edits:[]}).catch(()=>({edits:[]}))]).then(([d,e])=>{
