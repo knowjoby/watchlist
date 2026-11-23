@@ -14,8 +14,15 @@ main{max-width:1100px;margin:0 auto;padding:48px 16px 64px}
 h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em}
 .sub{margin:0 0 24px;color:var(--muted)}
 .sub a{color:var(--accent)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.filters button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:16px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:15px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+.tabs a[aria-selected=true]{color:var(--fg);border-color:var(--fg);font-weight:600}
+.tabs a span{font-size:12px;color:var(--muted);margin-left:5px;font-weight:400}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters .sep{width:1px;background:var(--line);margin:4px 4px}
+h3.more{font-size:15px;margin:36px 0 12px;color:var(--muted);font-weight:600}
+.filters button{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .filters button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;list-style:none;margin:0;padding:0}
 .card{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 0 18px;overflow:hidden}
@@ -26,7 +33,7 @@ h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em}
 .bar{height:4px;background:var(--tag);border-radius:2px;overflow:hidden}
 .bar span{display:block;height:100%;background:var(--accent)}
 .stat{font-size:13px;color:var(--muted);margin:0}
-.count{color:var(--muted);font-size:14px;margin:-12px 0 20px}
+.count{color:var(--muted);font-size:14px;margin:-8px 0 16px}
 .card h2{margin:0;font-size:17px}
 .card h2 small{color:var(--muted);font-weight:400}
 .card p{margin:0;color:var(--muted);font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -46,48 +53,54 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;flex-wrap:
 <main>
 <h1>Watchlist</h1>
 <p class="sub">Movies and web series I've been watching, synced from my Obsidian Movies &amp; Series log. More of my <a href="https://knowjoby.github.io/creations/">creations</a>.</p>
-<div class="filters" role="group" aria-label="Filter">
-<button data-f="all" aria-pressed="true">All</button>
-<button data-f="movie" aria-pressed="false">Movies</button>
-<button data-f="series" aria-pressed="false">Series</button>
-<button data-f="unsorted" aria-pressed="false">Not yet sorted</button>
-<button data-f="watching" aria-pressed="false">Watching</button>
-<button data-f="watched" aria-pressed="false">Watched</button>
-<button data-f="want" aria-pressed="false">Want to watch</button>
-</div>
+<nav class="tabs" role="tablist" aria-label="Viewing status" id="tabs"></nav>
+<div class="filters" role="group" aria-label="Filter" id="filters"></div>
 <p class="count" id="count"></p>
 <ul class="grid" id="grid"></ul>
 <p class="empty" id="empty" hidden>Nothing here yet.</p>
+<div id="more"></div>
 <footer><span id="updated"></span></footer>
 </main>
 <script>
-const label={want:"Want to watch",watching:"Watching",watched:"Watched",paused:"Paused",dropped:"Dropped"};
+const TABS=[["watching","Watching",i=>i.status==="watching"],["watched","Watched",i=>i.status==="watched"],["want","Want to watch",i=>i.status==="want"],["hold","On hold",i=>i.status==="paused"||i.status==="dropped"],["other","Everything else",i=>!["watching","watched","want","paused","dropped"].includes(i.status)]];
+const hold={paused:"Paused",dropped:"Dropped"};
 const kind={series:"Series",movie:"Movie",unsorted:"Not yet sorted"};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
-const store={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch{}}};
-store.set("wl_token",null);
-let items=[],f="all";
-function render(){
-  const shown=items.filter(i=>f==="all"||i.type===f||i.status===f||f==="p:"+i.platform);
-  const hm=m=>m>=60?`${Math.floor(m/60)}h ${m%60}m`:`${m}m`;
-  document.getElementById("grid").innerHTML=shown.map(i=>`<li class="card st-${i.status}"><div class="pwrap">
+const hm=m=>m>=60?`${Math.floor(m/60)}h ${m%60}m`:`${m}m`;
+try{localStorage.removeItem("wl_token")}catch{}
+let items=[],tab="watching",type="all",plat="";
+const byDate=(a,b)=>(b.date||"").localeCompare(a.date||"")||a.title.localeCompare(b.title);
+const sorter=t=>t==="watched"?(a,b)=>(b.rating||0)-(a.rating||0)||byDate(a,b):byDate;
+const card=i=>`<li class="card st-${i.status}"><div class="pwrap">
 ${i.poster?`<img class="poster" loading="lazy" referrerpolicy="no-referrer" src="${esc(i.poster)}" alt="" onerror="this.outerHTML='<div class=&quot;poster noposter&quot;>🎬</div>'">`:`<div class="poster noposter">🎬</div>`}${i.rating?`<span class="score" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}<small>/10</small></span>`:""}</div>
 <p class="kicker">${kind[i.type]||"Title"}${i.platform?" · "+esc(i.platform):""}${i.year?" · "+i.year:""}</p>
 <h2>${esc(i.title)}</h2>
 ${i.take?`<p>${esc(i.take)}</p>`:""}
 ${i.date||i.minutes?`<p class="stat">${[i.date,i.minutes?"▶ "+hm(i.minutes)+" played":"",i.progress!=null?i.progress+"% through":"",i.episodes?i.episodes+" ep"+(i.episodes>1?"s":"")+" finished":""].filter(Boolean).join(" · ")}</p>`:""}
 ${i.progress!=null?`<div class="bar" aria-hidden="true"><span style="width:${i.progress}%"></span></div>`:""}
-${label[i.status]?`<div class="meta">${label[i.status]?`<span class="tag ${i.status}">${label[i.status]}</span>`:""}</div>`:""}
-</li>`).join("");
+${hold[i.status]?`<div class="meta"><span class="tag">${hold[i.status]}</span></div>`:""}
+</li>`;
+function render(){
+  const T=TABS.find(t=>t[0]===tab)||TABS[0];
+  document.getElementById("tabs").innerHTML=TABS.map(([k,l,fn])=>`<a href="#${k}" role="tab" aria-selected="${k===T[0]}">${l}<span>${items.filter(fn).length}</span></a>`).join("");
+  const inTab=items.filter(T[2]);
+  const plats=[...new Set(inTab.map(i=>i.platform).filter(Boolean))].sort();
+  if(plat&&!plats.includes(plat))plat="";
+  const chip=(k,l,on)=>`<button data-k="${esc(k)}" aria-pressed="${on}">${esc(l)}</button>`;
+  const types=[["all","All"],["movie","Movies"],["series","Series"]].filter(([k])=>k==="all"||inTab.some(i=>i.type===k));
+  document.getElementById("filters").innerHTML=types.map(([k,l])=>chip("t:"+k,l,type===k)).join("")+(plats.length>1?`<span class="sep"></span>`+plats.map(p=>chip("p:"+p,p,plat===p)).join(""):"");
+  const shown=inTab.filter(i=>(type==="all"||i.type===type)&&(!plat||i.platform===plat)).sort(sorter(T[0]));
+  document.getElementById("grid").innerHTML=shown.map(card).join("");
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
+  let more="";
+  if(T[0]==="watching"&&type==="all"&&!plat){const recent=items.filter(TABS[4][2]).sort(byDate).slice(0,6);if(recent.length)more=`<h3 class="more">Also recently played</h3><ul class="grid">${recent.map(card).join("")}</ul>`}
+  document.getElementById("more").innerHTML=more;
 }
-document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
-fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
-  items=d.items||[];
-  document.querySelectorAll(".filters button").forEach(b=>{const v=b.dataset.f;if(["watching","watched","want","unsorted"].includes(v)&&!items.some(i=>i.status===v||i.type===v))b.hidden=true});
-  [...new Set(items.map(i=>i.platform).filter(Boolean))].sort().forEach(p=>{const b=document.createElement("button");b.textContent=p;b.setAttribute("aria-pressed","false");b.onclick=()=>{f="p:"+p;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};document.querySelector(".filters").append(b)});
-  if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;render()}).catch(()=>render());
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;const [g,v]=[b.dataset.k.slice(0,1),b.dataset.k.slice(2)];if(g==="t")type=v;else plat=plat===v?"":v;render()});
+function route(){const h=location.hash.slice(1);tab=TABS.some(t=>t[0]===h)?h:"watching";type="all";plat="";render()}
+window.addEventListener("hashchange",route);
+fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{items=d.items||[];if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;route()}).catch(route);
 </script>
 </body>
 </html>
