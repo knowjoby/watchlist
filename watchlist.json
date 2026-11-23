@@ -13,22 +13,22 @@
     {
       "title": "Serve The People",
       "type": "movie",
-      "status": "want",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-23",
       "minutes": 1,
       "progress": 1,
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/f3fd4aeba22a98263ab27e24411c862260a223408a878abaaf94ee40991c0b37.jpg",
-      "updated": "2026-11-23T17:47:57.923Z"
+      "updated": "2026-11-23T18:09:57.047Z"
     },
     {
       "title": "Search WWW",
       "type": "series",
-      "status": "want",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-23",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/8bc4e5e601f20c32203d8e5f6350bffc8364f9209583450e5a59f553b9369aa3.jpg",
-      "updated": "2026-11-23T17:49:06.470Z"
+      "updated": "2026-11-23T18:09:57.047Z"
     },
     {
       "title": "Hometown Cha-Cha-Cha",
@@ -237,13 +237,13 @@
     {
       "title": "Another Miss Oh - Season 1",
       "type": "series",
-      "status": "want",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-08",
       "minutes": 8,
       "progress": 12,
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/00d940807d6b9a34e21f2ff8dd348d9abb7e5dd53c20a83492762c93f8040ef6.jpg",
-      "updated": "2026-11-23T17:25:33.772Z"
+      "updated": "2026-11-23T18:09:57.047Z"
     },
     {
       "title": "Reply 1988 - Season 1",
@@ -321,12 +321,12 @@
     {
       "title": "Elsbeth",
       "type": "series",
-      "status": "want",
+      "status": "paused",
       "platform": "JioHotstar",
       "date": "2026-10-31",
       "minutes": 2,
       "progress": 43,
-      "updated": "2026-11-23T17:26:08.670Z"
+      "updated": "2026-11-23T18:09:57.047Z"
     },
     {
       "title": "Crash Landing on You",
