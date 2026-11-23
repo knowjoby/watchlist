@@ -15,13 +15,14 @@
     {
       "title": "Sunshine Through the Rain",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-21",
       "minutes": 25,
       "progress": 57,
       "episodes": 1,
-      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWXptTJG9P03IHY26j8SlfI0Ca1JEUXq3FOpOwkVQ4AezD0R7p5s3-m0tSgDHQyScp09_LCiECGeDWH_s65E4dTp7-hGrGvvyACXiAobB0iHxr2RxILqzAXH3g.jpg?r=177"
+      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWXptTJG9P03IHY26j8SlfI0Ca1JEUXq3FOpOwkVQ4AezD0R7p5s3-m0tSgDHQyScp09_LCiECGeDWH_s65E4dTp7-hGrGvvyACXiAobB0iHxr2RxILqzAXH3g.jpg?r=177",
+      "updated": "2026-11-23T17:23:51.413Z"
     },
     {
       "title": "Serve The People",
@@ -36,13 +37,25 @@
     {
       "title": "Mr. Bad - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-21",
       "minutes": 140,
       "progress": 87,
       "episodes": 2,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/1eb4a6a0c1580d590a572563bfe90207930c151bccd34d0aae198e996782b04b.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/1eb4a6a0c1580d590a572563bfe90207930c151bccd34d0aae198e996782b04b.jpg",
+      "updated": "2026-11-23T17:23:40.747Z"
+    },
+    {
+      "title": "Madden",
+      "type": "series",
+      "status": "paused",
+      "platform": "Prime Video",
+      "date": "2026-11-21",
+      "minutes": 8,
+      "progress": 8,
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/63a3a155019e4de8d92e7a2ca03ffba854bc66a4b3f7193f463c643ed9d17eca.jpg",
+      "updated": "2026-11-23T17:24:01.069Z"
     },
     {
       "title": "Madden",
@@ -77,13 +90,14 @@
     {
       "title": "Shine on Me",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-20",
       "minutes": 36,
       "progress": 36,
       "episodes": 1,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSWiq9wp6kJJ0dlPEKkic5-ydWcws5VqHkmbZ_BijF1hhfAnqcR8wKIsoD2xyHUtJBe6hCTdccYePI05hTGEXakVANaqIS_1eKwnNzuDA9CdgmHpOq_fewTU0A.jpg?r=8d1"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSWiq9wp6kJJ0dlPEKkic5-ydWcws5VqHkmbZ_BijF1hhfAnqcR8wKIsoD2xyHUtJBe6hCTdccYePI05hTGEXakVANaqIS_1eKwnNzuDA9CdgmHpOq_fewTU0A.jpg?r=8d1",
+      "updated": "2026-11-23T17:24:30.563Z"
     },
     {
       "title": "Head Over Heels",
@@ -98,12 +112,13 @@
     {
       "title": "When the Phone Rings",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-13",
       "minutes": 34,
       "progress": 52,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXRviZ3E3XS9HGuHnJphftPlARtffrZLt3fK-ADRf85b29YYU5wecYRO_IjNtpHOzavwTWBOjmKeaHwdxfQ6bPf7hBY0cXt1PigogXvVSSROZ_qjM20ULgp8kw.jpg?r=c4d"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXRviZ3E3XS9HGuHnJphftPlARtffrZLt3fK-ADRf85b29YYU5wecYRO_IjNtpHOzavwTWBOjmKeaHwdxfQ6bPf7hBY0cXt1PigogXvVSSROZ_qjM20ULgp8kw.jpg?r=c4d",
+      "updated": "2026-11-23T17:24:43.526Z"
     },
     {
       "title": "See You at Work Tomorrow!",
@@ -142,12 +157,13 @@
     {
       "title": "Catch the Ghost",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-11-10",
       "minutes": 272,
       "progress": 99,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/01785e7cb49efe7676fe487795e5434b2728c441207c2dba52fa395328816327.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/01785e7cb49efe7676fe487795e5434b2728c441207c2dba52fa395328816327.jpg",
+      "updated": "2026-11-23T17:25:04.416Z"
     },
     {
       "title": "100 Days My Prince",
