@@ -258,6 +258,13 @@ def collect():
                     items.pop(key)
             elif (i := manual(fm)):
                 merge(items, i, fuzzy=True)
+    typed = {norm(i["title"]): i for i in items.values() if i["type"] != "unsorted"}
+    for k, i in list(items.items()):
+        if i["type"] == "unsorted" and (t := typed.get(norm(i["title"]))):
+            for f in ("poster", "minutes", "progress", "episodes", "date", "platform"):
+                if f in i and f not in t:
+                    t[f] = i[f]
+            del items[k]
     return sorted(items.values(), key=lambda i: (i.get("date", ""), i["title"].lower()), reverse=True)
 
 
