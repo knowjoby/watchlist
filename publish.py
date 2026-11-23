@@ -258,6 +258,18 @@ def collect():
                     items.pop(key)
             elif (i := manual(fm)):
                 merge(items, i, fuzzy=True)
+    # Statuses/ratings the Journals plugin keeps in its own data (used for titles whose type isn't set yet).
+    try:
+        st = json.loads((v / ".obsidian/plugins/journal-date-organizer/data.json").read_text()) if v else {}
+    except (OSError, ValueError):
+        st = {}
+    kinds = {"movie": "Movie", "series": "Series", "unsorted": "Other"}
+    for i in items.values():
+        k = kinds[i["type"]] + ":" + i["title"].lower().strip()
+        if (s := STATUS.get(str((st.get("mediaStatuses") or {}).get(k, "")).lower())):
+            i["status"] = s
+        if (n := num((st.get("mediaRatings") or {}).get(k))) and 0 < n <= 10:
+            i["rating"] = round(n, 1)
     typed = {norm(i["title"]): i for i in items.values() if i["type"] != "unsorted"}
     for k, i in list(items.items()):
         if i["type"] == "unsorted" and (t := typed.get(norm(i["title"]))):
