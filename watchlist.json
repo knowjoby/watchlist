@@ -375,10 +375,11 @@
     {
       "title": "Royal Pains",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/04a398f062cb0be53b859a89003f8100090bfac7afb6e74da6b7c876680886b3.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/04a398f062cb0be53b859a89003f8100090bfac7afb6e74da6b7c876680886b3.jpg",
+      "updated": "2026-11-23T17:52:33.160Z"
     },
     {
       "title": "Neagley - Season 1",
