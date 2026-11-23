@@ -65,7 +65,7 @@ footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;flex-wrap:
 <footer><span id="updated"></span></footer>
 </main>
 <script>
-const TABS=[["watching","Watching",i=>i.status==="watching"],["watched","Watched",i=>i.status==="watched"],["want","Want to watch",i=>i.status==="want"],["hold","On hold",i=>i.status==="paused"||i.status==="dropped"],["other","Everything else",i=>!["watching","watched","want","paused","dropped"].includes(i.status)]];
+const TABS=[["watching","Watching",i=>i.status==="watching"],["watched","Watched",i=>i.status==="watched"],["want","Want to watch",i=>i.status==="want"],["hold","On hold",i=>i.status==="paused"],["dropped","Dropped",i=>i.status==="dropped"],["other","Everything else",i=>!["watching","watched","want","paused","dropped"].includes(i.status)]];
 const hold={paused:"Paused",dropped:"Dropped"};
 const kind={series:"Series",movie:"Movie",unsorted:"Not yet sorted"};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
@@ -97,7 +97,7 @@ function render(){
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
   let more="";
-  if(T[0]==="watching"&&type==="all"&&!plat){const done=items.filter(TABS[1][2]).sort(byDate);if(done.length)more=`<h3 class="more">Recently watched</h3><ul class="grid">${done.slice(0,5).map(card).join("")}</ul>`+(done.length>5?`<a class="morebtn" href="#watched">More watched <span>${done.length}</span></a>`:"")}
+  if(T[0]==="watching"&&type==="all"&&!plat){const done=items.filter(TABS.find(t=>t[0]==="watched")[2]).sort(byDate);if(done.length)more=`<h3 class="more">Recently watched</h3><ul class="grid">${done.slice(0,5).map(card).join("")}</ul>`+(done.length>5?`<a class="morebtn" href="#watched">More watched <span>${done.length}</span></a>`:"")}
   document.getElementById("more").innerHTML=more;
 }
 document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;const [g,v]=[b.dataset.k.slice(0,1),b.dataset.k.slice(2)];if(g==="t")type=v;else plat=plat===v?"":v;render()});
