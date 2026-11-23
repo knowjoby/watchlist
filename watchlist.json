@@ -4,13 +4,14 @@
     {
       "title": "Hometown Cha-Cha-Cha",
       "type": "series",
-      "status": "logged",
+      "status": "watching",
       "platform": "Netflix",
       "date": "2026-11-23",
       "minutes": 64,
       "progress": 47,
       "episodes": 2,
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABZ9jyqu9P1GZ9vjMCT5Gb5Jf4PArluPRFczOSFwefGeHWaAaays8-Ws3iYaagfl4-aQ2gNPe-G5T6wP0A5AqgsWoAHBY_yj4dzapnk0pFUW7iv4z05nQeZKpXw.jpg?r=120"
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABZ9jyqu9P1GZ9vjMCT5Gb5Jf4PArluPRFczOSFwefGeHWaAaays8-Ws3iYaagfl4-aQ2gNPe-G5T6wP0A5AqgsWoAHBY_yj4dzapnk0pFUW7iv4z05nQeZKpXw.jpg?r=120",
+      "updated": "2026-11-23T17:30:05.279Z"
     },
     {
       "title": "Sunshine Through the Rain",
@@ -149,10 +150,11 @@
     {
       "title": "Final Table",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-10",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d9595db409161333f2238fd695ba9877d5f2f0f498c8fc95bcddfb2adb063f01.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d9595db409161333f2238fd695ba9877d5f2f0f498c8fc95bcddfb2adb063f01.jpg",
+      "updated": "2026-11-23T17:25:13.037Z"
     },
     {
       "title": "Catch the Ghost",
@@ -163,7 +165,8 @@
       "minutes": 272,
       "progress": 99,
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/01785e7cb49efe7676fe487795e5434b2728c441207c2dba52fa395328816327.jpg",
-      "updated": "2026-11-23T17:25:04.416Z"
+      "rating": 10.0,
+      "updated": "2026-11-23T17:25:07.008Z"
     },
     {
       "title": "100 Days My Prince",
@@ -176,13 +179,14 @@
     {
       "title": "Weightlifting Fairy Kim Bok Joo",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-09",
       "minutes": 43,
       "progress": 38,
       "episodes": 1,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABS_s1P27r3FSbur0Mlg8DVP5m5sFV2c-C0TKrIcZAl18cLue22BJ4SZV9oMeiVIg82Tm7RBG9-Z4hKoiX9BmG1X2_-5pKw68fFLPlMtMZMoCRbn1AxKjcVJchw.jpg?r=a5e"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABS_s1P27r3FSbur0Mlg8DVP5m5sFV2c-C0TKrIcZAl18cLue22BJ4SZV9oMeiVIg82Tm7RBG9-Z4hKoiX9BmG1X2_-5pKw68fFLPlMtMZMoCRbn1AxKjcVJchw.jpg?r=a5e",
+      "updated": "2026-11-23T17:25:21.918Z"
     },
     {
       "title": "The Mongoose",
@@ -197,146 +201,165 @@
     {
       "title": "Hidden Love",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-09",
       "minutes": 61,
       "progress": 80,
       "episodes": 2,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABdX6_Q0KY4CgLNgGhHYJayfewqUVRGrMvWOSDULEyGQ_TqVKQ2HgOWiE5FgTj8y0mY2i9CD0xVbCd_eyAlweguBsqkHGD06AFndmE6P0j6-8FQkFElAbTv7WJg.jpg?r=047"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABdX6_Q0KY4CgLNgGhHYJayfewqUVRGrMvWOSDULEyGQ_TqVKQ2HgOWiE5FgTj8y0mY2i9CD0xVbCd_eyAlweguBsqkHGD06AFndmE6P0j6-8FQkFElAbTv7WJg.jpg?r=047",
+      "updated": "2026-11-23T17:25:18.925Z"
     },
     {
       "title": "Nevertheless,",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-08",
       "minutes": 21,
       "progress": 42,
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSWd8tl1GBXLxJQE4mG25vty0f3nzNSlvCzR45XxoAXkrvev73QCTTMbRTYuY075gf0CzIs0nduMO1zTvUg6p5EPQW80y-tZs6hDoB4iu9HFd3Dhl-OaCK91YA.jpg?r=714"
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABSWd8tl1GBXLxJQE4mG25vty0f3nzNSlvCzR45XxoAXkrvev73QCTTMbRTYuY075gf0CzIs0nduMO1zTvUg6p5EPQW80y-tZs6hDoB4iu9HFd3Dhl-OaCK91YA.jpg?r=714",
+      "updated": "2026-11-23T17:25:29.638Z"
     },
     {
       "title": "Another Miss Oh - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-08",
       "minutes": 8,
       "progress": 12,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/00d940807d6b9a34e21f2ff8dd348d9abb7e5dd53c20a83492762c93f8040ef6.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/00d940807d6b9a34e21f2ff8dd348d9abb7e5dd53c20a83492762c93f8040ef6.jpg",
+      "updated": "2026-11-23T17:25:33.772Z"
     },
     {
       "title": "Reply 1988 - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-05",
       "minutes": 106,
       "progress": 99,
       "episodes": 1,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/a1339dcadd45b5f281b72565a471d4602f203ec9fe4f7d231715eed95da6a716.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/a1339dcadd45b5f281b72565a471d4602f203ec9fe4f7d231715eed95da6a716.jpg",
+      "rating": 9.0,
+      "updated": "2026-11-23T17:25:40.506Z"
     },
     {
       "title": "Superstore",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-11-03",
       "minutes": 0,
       "progress": 0,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXz45GCo5fAQhzkM5wsIoKy0rzn4vNx8bje06ip5697dz_djSBtH24dXDlOCPhgn6G_2ZmG2PKNtUsqNamGZitJ0FeGNCeRcHa3FyYLPcoq2Ma9XL4CLkNOWZw.jpg?r=de5"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXz45GCo5fAQhzkM5wsIoKy0rzn4vNx8bje06ip5697dz_djSBtH24dXDlOCPhgn6G_2ZmG2PKNtUsqNamGZitJ0FeGNCeRcHa3FyYLPcoq2Ma9XL4CLkNOWZw.jpg?r=de5",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:25:48.699Z"
     },
     {
       "title": "Descendants of the Sun",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-03",
       "minutes": 102,
       "progress": 79,
       "episodes": 4,
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABYFpZGV4ukze7IzlkqTxTF4blZhaCTZy3t2DdlSQB6IQh5xzS-rZjvgak56cjM8CaWWrVfQyW2TdvmzxSP2wjORINrQOiPu-JUAmdSB4-RqQp3XA55f7hm1bXg.jpg?r=ad7"
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABYFpZGV4ukze7IzlkqTxTF4blZhaCTZy3t2DdlSQB6IQh5xzS-rZjvgak56cjM8CaWWrVfQyW2TdvmzxSP2wjORINrQOiPu-JUAmdSB4-RqQp3XA55f7hm1bXg.jpg?r=ad7",
+      "updated": "2026-11-23T17:25:44.345Z"
     },
     {
       "title": "Dynamite Kiss",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-11-02",
       "minutes": 205,
       "progress": 85,
       "episodes": 8,
-      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWebZxRukWfs7Ag18GyWotOjyvZSAw24wrM8kCNOy9nqR_2JWm50bSnoNYow5QCLu0OeUgyjd1FXLhR_17wdouNcaaohjtBgV8kg0EccgsSWspMrFR4QUO9Maw.jpg?r=a69"
+      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWebZxRukWfs7Ag18GyWotOjyvZSAw24wrM8kCNOy9nqR_2JWm50bSnoNYow5QCLu0OeUgyjd1FXLhR_17wdouNcaaohjtBgV8kg0EccgsSWspMrFR4QUO9Maw.jpg?r=a69",
+      "updated": "2026-11-23T17:25:53.817Z"
     },
     {
       "title": "The Legend of Kitchen Soldier",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-11-01",
       "minutes": 191,
       "progress": 96,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/0b0297a9b85e26f16acaf200cd3e7efc3b36b9eef78d898ea12d13d03043d8b1.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/0b0297a9b85e26f16acaf200cd3e7efc3b36b9eef78d898ea12d13d03043d8b1.jpg",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:26:01.132Z"
     },
     {
       "title": "Twenty Five Twenty One",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-10-31",
       "minutes": 42,
       "progress": 56,
       "episodes": 3,
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABUa08z1AcWfFGVlXdpmRGO3E5VYlaUd0sP-Ds11o9IJC1LpNMl6tAp_a3oUNH2MhFlWwskbQkOhNI9VqOSZtY7QsBogjVPW95Y1MppHaFjjOUtFYMJR316Dqbg.jpg?r=82c"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABUa08z1AcWfFGVlXdpmRGO3E5VYlaUd0sP-Ds11o9IJC1LpNMl6tAp_a3oUNH2MhFlWwskbQkOhNI9VqOSZtY7QsBogjVPW95Y1MppHaFjjOUtFYMJR316Dqbg.jpg?r=82c",
+      "updated": "2026-11-23T17:26:05.878Z"
     },
     {
       "title": "Elsbeth",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "JioHotstar",
       "date": "2026-10-31",
       "minutes": 2,
-      "progress": 43
+      "progress": 43,
+      "updated": "2026-11-23T17:26:08.670Z"
     },
     {
       "title": "Crash Landing on You",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-10-31",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABb7vrw2J6O_YfQDbOpPwqledz8sdothn3leW96_yt6buwsSXT9x4EdPWT407IWEo-zZEBzL6ZSKEkd9nabpYqTkIScW0rZnHrN69L2o43RHjzNCpvi_wEzeJkg.jpg?r=cbd"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABb7vrw2J6O_YfQDbOpPwqledz8sdothn3leW96_yt6buwsSXT9x4EdPWT407IWEo-zZEBzL6ZSKEkd9nabpYqTkIScW0rZnHrN69L2o43RHjzNCpvi_wEzeJkg.jpg?r=cbd",
+      "updated": "2026-11-23T17:26:12.232Z"
     },
     {
       "title": "Mouse - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-26",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/45964e3cfcee8da2af1d1a03700131d13d543bcad599fe6c68e0a0411b1f207c.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/45964e3cfcee8da2af1d1a03700131d13d543bcad599fe6c68e0a0411b1f207c.jpg",
+      "rating": 8.0,
+      "updated": "2026-11-23T17:26:21.515Z"
     },
     {
       "title": "Marry My Husband - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-10-26",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/2fad52243a84d1e717a32ae82810913f741a9495f1f39c8f491544434f212f56.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/2fad52243a84d1e717a32ae82810913f741a9495f1f39c8f491544434f212f56.jpg",
+      "updated": "2026-11-23T17:26:15.593Z"
     },
     {
       "title": "The Vineyard - Series 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/f21c588601f86985cbfe072fbdfc7be46369bd5bdccd05669c2743cb8de0cbc9.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/f21c588601f86985cbfe072fbdfc7be46369bd5bdccd05669c2743cb8de0cbc9.jpg",
+      "updated": "2026-11-23T17:26:48.845Z"
     },
     {
       "title": "The Terminal List - S2",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/067629e9b25a30206dfa145b8de960e8bbf8660a78fd23cdc05532654059b74b.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/067629e9b25a30206dfa145b8de960e8bbf8660a78fd23cdc05532654059b74b.jpg",
+      "updated": "2026-11-23T17:26:51.229Z"
     },
     {
       "title": "Royal Pains",
@@ -349,73 +372,82 @@
     {
       "title": "Neagley - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/cf8571eb4966570ab82a526bdc456c7478bf1a6305db0ddceb4951e0d2a8e3cd.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/cf8571eb4966570ab82a526bdc456c7478bf1a6305db0ddceb4951e0d2a8e3cd.jpg",
+      "updated": "2026-11-23T17:27:02.857Z"
     },
     {
       "title": "Matlock Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/dfafe52f98ae414b1139d9f0ae5db75532bb043dc2324e69cbfb575a488a8eac.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/dfafe52f98ae414b1139d9f0ae5db75532bb043dc2324e69cbfb575a488a8eac.jpg",
+      "updated": "2026-11-23T17:26:44.797Z"
     },
     {
       "title": "Man In The High Castle - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/c264dbb00d06e2610f35c3cbb5c1d91edf028f7ec4902a6d1e0765239314f0a0.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/c264dbb00d06e2610f35c3cbb5c1d91edf028f7ec4902a6d1e0765239314f0a0.jpg",
+      "updated": "2026-11-23T17:26:41.157Z"
     },
     {
       "title": "From Season 4",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/8acfe2c26541e4d852e7a82925e391181458de6b9314bf9da0a8cf63b08375af.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/8acfe2c26541e4d852e7a82925e391181458de6b9314bf9da0a8cf63b08375af.jpg",
+      "updated": "2026-11-23T17:26:30.438Z"
     },
     {
       "title": "Friends Sex and Games - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/c10f729266b1fbacd89fb3e3f468f3a20a6b95cec376eddeceafd96ec4a0e9b9.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/c10f729266b1fbacd89fb3e3f468f3a20a6b95cec376eddeceafd96ec4a0e9b9.jpg",
+      "updated": "2026-11-23T17:26:28.181Z"
     },
     {
       "title": "CIA - Season 2",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-24",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d52e3dc7ec98d1bc9c8235e7c511b355615b000c7b8c1a4839b516d6556576ec.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d52e3dc7ec98d1bc9c8235e7c511b355615b000c7b8c1a4839b516d6556576ec.jpg",
+      "updated": "2026-11-23T17:26:24.950Z"
     },
     {
       "title": "The West Wing - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-23",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/288cf52f41022c158673bcf4802c71e84ab9bfb0d779d7a5e5c8f29984066c36.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/288cf52f41022c158673bcf4802c71e84ab9bfb0d779d7a5e5c8f29984066c36.jpg",
+      "updated": "2026-11-23T17:27:05.989Z"
     },
     {
       "title": "Yeh Hai Mohabbatein",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "JioHotstar",
-      "date": "2026-10-20"
+      "date": "2026-10-20",
+      "updated": "2026-11-23T17:27:30.617Z"
     },
     {
       "title": "Wayne",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-20",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/70cfd8ccb589268cabdb353af8ff6b70b67fa534c1adc76c9313f95bbd3b1fa6.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/70cfd8ccb589268cabdb353af8ff6b70b67fa534c1adc76c9313f95bbd3b1fa6.jpg",
+      "updated": "2026-11-23T17:27:33.766Z"
     },
     {
       "title": "VisionQuest",
@@ -423,54 +455,63 @@
       "status": "want",
       "year": 2026,
       "date": "2026-10-20",
-      "poster": "https://resizing.flixster.com/R2c-hSJpIDhifCMsLn-s8VEGtZc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU5ZjEwNzQtYTJhMC00YjkyLTlkNTAtZjVhNWQ1OGU5MGI5LmpwZw=="
+      "poster": "https://resizing.flixster.com/R2c-hSJpIDhifCMsLn-s8VEGtZc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU5ZjEwNzQtYTJhMC00YjkyLTlkNTAtZjVhNWQ1OGU5MGI5LmpwZw==",
+      "updated": "2026-11-23T17:29:38.259Z"
     },
     {
       "title": "The Most Beautiful Girl in the World",
       "type": "movie",
-      "status": "logged",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-10-20",
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABQalWTK9_wAMQKgI725QSO3TSCAnpzO_ksUmkEYnuoqOZuw6bmDq1Ytpygp4FZMZxshwd5CNINb0ChaFITQyJIPsA_r0dO70e24n77arU-ZozLPK9TmxbHlTJQ.jpg?r=772"
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABQalWTK9_wAMQKgI725QSO3TSCAnpzO_ksUmkEYnuoqOZuw6bmDq1Ytpygp4FZMZxshwd5CNINb0ChaFITQyJIPsA_r0dO70e24n77arU-ZozLPK9TmxbHlTJQ.jpg?r=772",
+      "rating": 9.0,
+      "updated": "2026-11-23T17:27:48.956Z"
     },
     {
       "title": "Once upon a Time In... Hollywood",
       "type": "movie",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-20",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/421fcd7b325f5f1422be7919ca3e7cb6f48a1217d55e0a3395a2bc4d8bebd052.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/421fcd7b325f5f1422be7919ca3e7cb6f48a1217d55e0a3395a2bc4d8bebd052.jpg",
+      "rating": 9.0,
+      "updated": "2026-11-23T17:27:26.377Z"
     },
     {
       "title": "Made with Love",
       "type": "series",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-10-20",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABd0OBdbYu9IWoolfTjbt3OBq5xISNNwczDRR7oudTn3wpyX4DXeqmJWas65cxCTRsFVemJiu52hhqOCow6T5p8FTcCbB10j6079Phr6gsATkvH1og8ROSA6zdQ.jpg?r=e0f"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABd0OBdbYu9IWoolfTjbt3OBq5xISNNwczDRR7oudTn3wpyX4DXeqmJWas65cxCTRsFVemJiu52hhqOCow6T5p8FTcCbB10j6079Phr6gsATkvH1og8ROSA6zdQ.jpg?r=e0f",
+      "updated": "2026-11-23T17:27:21.412Z"
     },
     {
       "title": "Lanterns",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "JioHotstar",
-      "date": "2026-10-20"
+      "date": "2026-10-20",
+      "updated": "2026-11-23T17:27:16.593Z"
     },
     {
       "title": "Heartbreak Motel",
       "type": "movie",
-      "status": "logged",
+      "status": "want",
       "platform": "Netflix",
       "date": "2026-10-20",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABTtWKDiBUZj03BBd1MN-cg-jqg-JMrvIYdsUSM57lukV0u-HzNTQM2kFeWWZkxfocC0UdskJ-7C-VaAC4wrP0iCjrmlqL8CHv1WKP3tbvlWjRdYUd3HNC7nPxw.jpg?r=2cb"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABTtWKDiBUZj03BBd1MN-cg-jqg-JMrvIYdsUSM57lukV0u-HzNTQM2kFeWWZkxfocC0UdskJ-7C-VaAC4wrP0iCjrmlqL8CHv1WKP3tbvlWjRdYUd3HNC7nPxw.jpg?r=2cb",
+      "updated": "2026-11-23T17:27:11.465Z"
     },
     {
       "title": "24 Hours with Gaspar",
       "type": "movie",
-      "status": "logged",
+      "status": "paused",
       "platform": "Netflix",
       "date": "2026-10-20",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABRa96suYwWXlMOPaJ2R0wHE3EGeG2LHcbr4ExzKzzCUqWFKa62IKG-886ijxTIKIhIdxAbzEStri2oCIR3xtWwLCnvfO6De3ArBjzUoCOKEagyuUYDhXazPffQ.jpg?r=ee5"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABRa96suYwWXlMOPaJ2R0wHE3EGeG2LHcbr4ExzKzzCUqWFKa62IKG-886ijxTIKIhIdxAbzEStri2oCIR3xtWwLCnvfO6De3ArBjzUoCOKEagyuUYDhXazPffQ.jpg?r=ee5",
+      "updated": "2026-11-23T17:27:09.025Z"
     },
     {
       "title": "Murder in a Small Town",
@@ -478,7 +519,8 @@
       "status": "want",
       "year": 2024,
       "date": "2026-10-19",
-      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26329324_b_v12_af.jpg"
+      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26329324_b_v12_af.jpg",
+      "updated": "2026-11-23T17:29:35.238Z"
     },
     {
       "title": "Love from 9 to 5",
@@ -502,15 +544,17 @@
       "status": "want",
       "year": 2026,
       "date": "2026-10-19",
-      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32898304_b_v12_aa.jpg"
+      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32898304_b_v12_aa.jpg",
+      "updated": "2026-11-23T17:29:41.171Z"
     },
     {
       "title": "A Perfect Story",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "Netflix",
       "date": "2026-10-19",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWFQJksVg-caCfdYpV02I5WE4hpLTPzvwhV9wc-NMoeSqyfdzPZMDDZy9zZm-crqA6mtJ0UuT0JF7FtqevalITGyVD-rr5XYlYL5-AaQfpFILIdgtVUfy2bfVg.jpg?r=a20"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWFQJksVg-caCfdYpV02I5WE4hpLTPzvwhV9wc-NMoeSqyfdzPZMDDZy9zZm-crqA6mtJ0UuT0JF7FtqevalITGyVD-rr5XYlYL5-AaQfpFILIdgtVUfy2bfVg.jpg?r=a20",
+      "updated": "2026-11-23T17:28:14.161Z"
     },
     {
       "title": "Time - Season 1",
@@ -523,10 +567,11 @@
     {
       "title": "Time",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/93ab27f100618f18c930ea6936f175b8d89a1ad7e0a669a20a2c7533542aa00a.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/93ab27f100618f18c930ea6936f175b8d89a1ad7e0a669a20a2c7533542aa00a.jpg",
+      "updated": "2026-11-23T17:28:36.758Z"
     },
     {
       "title": "The Park Maniac",
@@ -539,10 +584,11 @@
     {
       "title": "Paul- Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/3ea845d38c61d74c1a2ae993ef61750f912fd5876ddaa4a28d256d5882ca28e3.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/3ea845d38c61d74c1a2ae993ef61750f912fd5876ddaa4a28d256d5882ca28e3.jpg",
+      "updated": "2026-11-23T17:28:32.590Z"
     },
     {
       "title": "Masterplan",
@@ -555,87 +601,102 @@
     {
       "title": "I Would Rather Die - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5bfdfa03f97ccb8be70f7b2ad4955fbd725aa752084af75ac74a1a2926686c3.png"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5bfdfa03f97ccb8be70f7b2ad4955fbd725aa752084af75ac74a1a2926686c3.png",
+      "updated": "2026-11-23T17:28:27.518Z"
     },
     {
       "title": "Dexter: Resurrection, Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/07658548bb0fa2888f9b906f7a62c5bbaac62ca72863e9b00551f105897498a2.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/07658548bb0fa2888f9b906f7a62c5bbaac62ca72863e9b00551f105897498a2.jpg",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:28:19.107Z"
     },
     {
       "title": "The Expanse - Season 4 (4K UHD)",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-17",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/0627f6d742759bf51af05a2657fdfe5b6ef72a905e036b7b321da601b7670371.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/0627f6d742759bf51af05a2657fdfe5b6ef72a905e036b7b321da601b7670371.jpg",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:28:55.936Z"
     },
     {
       "title": "Disclosure Day",
       "type": "movie",
-      "status": "logged",
+      "status": "watched",
       "platform": "Hotstar",
       "date": "2026-10-17",
-      "rating": 5.0
+      "rating": 5.0,
+      "updated": "2026-11-23T17:28:43.993Z"
     },
     {
       "title": "The Night Agent",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-10-16",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABaiK7DfS5MTdFGEa9IiXKl6IOQATekfsUqA9g_jfyLVTr_uT-AmpOkCwxrr-nbxatm91wRbSwwn0QCQ-iEOHIvk7EK30ShTsASOITWvTvknDGSBdwtuYw2ayqw.jpg?r=78b"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABaiK7DfS5MTdFGEa9IiXKl6IOQATekfsUqA9g_jfyLVTr_uT-AmpOkCwxrr-nbxatm91wRbSwwn0QCQ-iEOHIvk7EK30ShTsASOITWvTvknDGSBdwtuYw2ayqw.jpg?r=78b",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:29:24.003Z"
     },
     {
       "title": "The Beast in Me",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Netflix",
       "date": "2026-10-16",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABcvgAkeRUf3LmQAMcTbGh9mujdqDPmL0ehhWXFh7F5UiEdj5pMEL6Ap0JMvKFQGF56IT9xtsIqwZiRUZREDlqnzDn99hxt7jOBqBG2T3J1pXg3u3gu0PSeJQ2Q.jpg?r=5af"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABcvgAkeRUf3LmQAMcTbGh9mujdqDPmL0ehhWXFh7F5UiEdj5pMEL6Ap0JMvKFQGF56IT9xtsIqwZiRUZREDlqnzDn99hxt7jOBqBG2T3J1pXg3u3gu0PSeJQ2Q.jpg?r=5af",
+      "updated": "2026-11-23T17:29:17.437Z"
     },
     {
       "title": "How To Get To Heaven From Belfast",
       "type": "series",
-      "status": "logged",
+      "status": "paused",
       "platform": "Netflix",
       "date": "2026-10-16",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABdTWIV4G42W4gKwOf_bhr-HbWpz9msu90TWPQxGeIuJDsfSmV7TWRFOHP2qbkz72qxTjDnKTNrRSmEoHeVYdViuzE5Eetk7QjzL14TUlhE8d7gyUBdjntN171w.jpg?r=071"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABdTWIV4G42W4gKwOf_bhr-HbWpz9msu90TWPQxGeIuJDsfSmV7TWRFOHP2qbkz72qxTjDnKTNrRSmEoHeVYdViuzE5Eetk7QjzL14TUlhE8d7gyUBdjntN171w.jpg?r=071",
+      "updated": "2026-11-23T17:29:10.829Z"
     },
     {
       "title": "Carrie - Season 1",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-16",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/40e274a42079222c662efded33193ca4baef6c6427e47d67b3c88d4b187a00ab.jpg",
-      "rating": 10.0
+      "rating": 10.0,
+      "updated": "2026-11-23T17:29:08.565Z"
     },
     {
       "title": "Animals",
       "type": "movie",
-      "status": "logged",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-10-16",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABY25xWNsj7M8BmZPazxeOUjEEDdrrwsBvXrg9a6TnEOASnqfmJteOuEtWFSFAzCUyePhD-QUb_qmt__aw5MOieK28CycpGcsTD_Dd3hRg0rhx4sJtI_3ILoJlA.jpg?r=c8a"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABY25xWNsj7M8BmZPazxeOUjEEDdrrwsBvXrg9a6TnEOASnqfmJteOuEtWFSFAzCUyePhD-QUb_qmt__aw5MOieK28CycpGcsTD_Dd3hRg0rhx4sJtI_3ILoJlA.jpg?r=c8a",
+      "rating": 1.0,
+      "updated": "2026-11-23T17:29:05.734Z"
     },
     {
       "title": "Jailer2",
       "type": "movie",
-      "status": "logged"
+      "status": "watched",
+      "updated": "2026-11-23T17:28:47.870Z"
     },
     {
       "title": "Green Laterns - Series",
       "type": "series",
-      "status": "logged",
+      "status": "watched",
       "platform": "Hotstar",
-      "rating": 9.0
+      "rating": 9.0,
+      "updated": "2026-11-23T17:28:22.113Z"
     }
   ]
 }
