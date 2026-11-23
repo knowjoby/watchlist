@@ -22,7 +22,10 @@ KINDS = {"movie": "movie", "movies": "movie", "film": "movie", "films": "movie",
          "tvshow": "series", "tvshows": "series", "tvseries": "series", "seriestvshow": "series", "television": "series",
          "video": "video", "videos": "video", "youtube": "video", "other": "unsorted"}
 STATUS = {"watching": "watching", "watched": "watched", "completed": "watched", "finished": "watched",
-          "to-watch": "want", "watchlist": "want", "want": "want"}
+          "to-watch": "want", "watchlist": "want", "want": "want", "paused": "paused", "dropped": "dropped"}
+NOTE_STATUS = {"want": "Watchlist", "watching": "Watching", "watched": "Watched", "paused": "Paused", "dropped": "Dropped", "logged": "Logged"}
+RT_STATUS = {"want": "to-watch", "watching": "watching", "watched": "watched", "paused": "paused", "dropped": "dropped", "logged": "to-watch"}
+EDITS = REPO / "edits.json"
 
 
 def frontmatter(path):
@@ -150,7 +153,14 @@ def review(fm, stem):
         i["rating"] = round(n, 1)
     if (p := poster(fm.get("cover"))):
         i["poster"] = p
+    if (u := stamp_of(fm)):
+        i["updated"] = u
     return i
+
+
+def stamp_of(fm):
+    u = str(fm.get("review updated") or "")
+    return u if re.fullmatch(r"\d{4}-\d\d-\d\dT[\d:.]+Z", u) else None
 
 
 def rotten(fm, stem):
@@ -164,6 +174,8 @@ def rotten(fm, stem):
         i["rating"] = round(n, 1)
     if (p := safe_url(fm.get("poster"))):
         i["poster"] = p
+    if (u := stamp_of(fm)):
+        i["updated"] = u
     return i
 
 
@@ -233,7 +245,87 @@ def collect():
     return sorted(items.values(), key=lambda i: (i.get("date", ""), i["title"].lower()), reverse=True)
 
 
+def set_frontmatter(path, updates):
+    """Replace/insert/remove scalar frontmatter keys (case-insensitive), leaving everything else untouched."""
+    lines = path.read_text(encoding="utf-8").split("\n")
+    end = lines.index("---", 1)
+    for key, value in updates.items():
+        idx = next((n for n in range(1, end) if re.match(re.escape(key) + r"\s*:", lines[n], re.I)), None)
+        new = None if value is None else f"{key}: {json.dumps(value, ensure_ascii=False)}"
+        if idx is None:
+            if new:
+                lines.insert(end, new)
+                end += 1
+            continue
+        stop = idx + 1
+        while stop < end and re.match(r"^\s+-|^\s{2,}\S", lines[stop]):
+            stop += 1
+        lines[idx:stop] = [new] if new else []
+        end -= (stop - idx) - (1 if new else 0)
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def target_note(folder, edit):
+    """The note a web edit belongs in: a Rotten Tomatoes pick or a personal review note; created if missing."""
+    want = norm(edit["title"])
+    for p in sorted(folder.rglob("*.md")):
+        fm = frontmatter(p)
+        if fm.get("capture source") == "Obsidian Capture" or set(toks(fm.get("category"))) & {"journal", "reflection"}:
+            continue
+        if fm.get("source") == "rotten-tomatoes":
+            if norm(fm.get("title") or p.stem.replace("+", " ")) == want:
+                return p, fm, True
+        elif kind_of(fm) == edit["type"] and norm(fm.get("captured title") or fm.get("title") or p.stem) == want:
+            return p, fm, False
+    name = re.sub(r"\s+", " ", re.sub(r'[\\/:*?"<>|#^\[\]]', " ", edit["title"])).strip() or "Untitled"
+    p = folder / f"{name}.md"
+    if p.exists():
+        return p, frontmatter(p), False
+    p.write_text("---\n" + "\n".join(f"{k}: {json.dumps(v, ensure_ascii=False)}" for k, v in {
+        "Title": edit["title"], "Captured title": edit["title"], "Entry type": edit["type"].capitalize(),
+        "Category": "Movie" if edit["type"] == "movie" else "TVShow"}.items()) + f"\n---\n\n# {edit['title']}\n", encoding="utf-8")
+    return p, {}, False
+
+
+def apply_web_edits():
+    """Pull owner edits made on the website (edits.json) into Obsidian notes; newest change wins."""
+    git = lambda *a: subprocess.run(["git", "-C", str(REPO), *a], check=True, capture_output=True, text=True)
+    git("pull", "-q", "--rebase")
+    try:
+        edits = json.loads(EDITS.read_text()).get("edits", [])
+    except (OSError, ValueError):
+        return 0
+    v = vault()
+    if not edits or not v:
+        return 0
+    folder = v / "Jobs life/Series and Movies"
+    folder.mkdir(exist_ok=True)
+    applied = 0
+    for e in edits:
+        if e.get("type") not in ("movie", "series") or not str(e.get("title", "")).strip() or not stamp_of({"review updated": e.get("updated")}):
+            continue
+        path, fm, rt = target_note(folder, e)
+        if (stamp_of(fm) or "") >= e["updated"]:
+            continue
+        upd = {"Review updated": e["updated"]}
+        if e.get("status") in NOTE_STATUS:
+            upd["status" if rt else "Status"] = (RT_STATUS if rt else NOTE_STATUS)[e["status"]]
+        if "rating" in e:
+            r = e["rating"]
+            upd["my_rating" if rt else "Rating"] = int(r) if isinstance(r, (int, float)) and 1 <= r <= 10 else None
+        set_frontmatter(path, upd)
+        applied += 1
+    EDITS.write_text(json.dumps({"edits": []}, indent=2) + "\n")
+    git("add", "edits.json")
+    git("commit", "-q", "-m", f"Apply {len(edits)} web edit(s) to Obsidian")
+    git("push", "-q")
+    print(f"Applied {applied} of {len(edits)} web edit(s).")
+    return applied
+
+
 def main():
+    if "--dry-run" not in sys.argv:
+        apply_web_edits()
     items = collect()
     if "--dry-run" in sys.argv:
         print(json.dumps(items, indent=2, ensure_ascii=False))

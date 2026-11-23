@@ -35,7 +35,13 @@ h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em}
 .watching{color:var(--accent);background:transparent;border:1px solid currentColor}
 .stars{margin-left:auto;color:var(--star);letter-spacing:1px}
 .empty{color:var(--muted);padding:32px 0}
-footer{margin-top:40px;color:var(--muted);font-size:13px}
+footer{margin-top:40px;color:var(--muted);font-size:13px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+footer button{font:inherit;background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;cursor:pointer}
+.edit{display:flex;gap:8px;margin-top:4px}
+.edit select{flex:1;min-width:0;font:inherit;font-size:13px;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.saving{font-size:12px;color:var(--muted);margin:0}
+.st-paused,.st-dropped{opacity:.8}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;max-width:calc(100% - 32px)}
 </style>
 </head>
 <body>
@@ -54,33 +60,77 @@ footer{margin-top:40px;color:var(--muted);font-size:13px}
 <p class="count" id="count"></p>
 <ul class="grid" id="grid"></ul>
 <p class="empty" id="empty" hidden>Nothing here yet.</p>
-<footer id="updated"></footer>
+<footer><span id="updated"></span><span id="owner"></span></footer>
+<div class="toast" id="toast" role="status" hidden></div>
 </main>
 <script>
-const label={want:"Want to watch",watching:"Watching",watched:"Watched"};
+const REPO="knowjoby/watchlist",API="https://api.github.com/repos/"+REPO+"/contents/edits.json";
+const label={want:"Want to watch",watching:"Watching",watched:"Watched",paused:"Paused",dropped:"Dropped"};
 const kind={series:"Series",movie:"Movie",unsorted:"Not yet sorted"};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
-let items=[],f="all";
+const keyOf=i=>i.type+":"+i.title.toLowerCase().trim();
+const store={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch{}}};
+let items=[],f="all",token=store.get("wl_token"),saving=new Set();
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,3500)}
+function editor(i){
+  if(!token||i.type==="unsorted")return "";
+  const k=esc(keyOf(i)),st=i.status==="logged"?"":i.status;
+  return `<div class="edit"><select aria-label="Status for ${esc(i.title)}" data-k="${k}" data-w="status"><option value="">Status…</option>${Object.entries(label).map(([v,t])=>`<option value="${v}"${st===v?" selected":""}>${t}</option>`).join("")}</select>
+<select aria-label="Rating for ${esc(i.title)}" data-k="${k}" data-w="rating"><option value="">Rate…</option>${[...Array(10)].map((_,n)=>`<option value="${n+1}"${Math.round(i.rating)===n+1?" selected":""}>${n+1} / 10</option>`).join("")}</select></div>${saving.has(keyOf(i))?`<p class="saving">Saving… syncs to Obsidian within ~5 min</p>`:""}`;
+}
 function render(){
   const shown=items.filter(i=>f==="all"||i.type===f||i.status===f||f==="p:"+i.platform);
   const hm=m=>m>=60?`${Math.floor(m/60)}h ${m%60}m`:`${m}m`;
-  document.getElementById("grid").innerHTML=shown.map(i=>`<li class="card">
+  document.getElementById("grid").innerHTML=shown.map(i=>`<li class="card st-${i.status}">
 ${i.poster?`<img class="poster" loading="lazy" referrerpolicy="no-referrer" src="${esc(i.poster)}" alt="" onerror="this.outerHTML='<div class=&quot;poster noposter&quot;>🎬</div>'">`:`<div class="poster noposter">🎬</div>`}
 <p class="kicker">${kind[i.type]||"Title"}${i.platform?" · "+esc(i.platform):""}${i.year?" · "+i.year:""}</p>
 <h2>${esc(i.title)}</h2>
 ${i.take?`<p>${esc(i.take)}</p>`:""}
 ${i.date||i.minutes?`<p class="stat">${[i.date,i.minutes?"▶ "+hm(i.minutes)+" played":"",i.progress!=null?i.progress+"% through":"",i.episodes?i.episodes+" ep"+(i.episodes>1?"s":"")+" finished":""].filter(Boolean).join(" · ")}</p>`:""}
 ${i.progress!=null?`<div class="bar" aria-hidden="true"><span style="width:${i.progress}%"></span></div>`:""}
-${i.status!=="logged"||i.rating?`<div class="meta">${i.status!=="logged"?`<span class="tag ${i.status}">${label[i.status]}</span>`:""}${i.rating?`<span class="stars" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}/10</span>`:""}</div>`:""}
+${i.status!=="logged"||i.rating?`<div class="meta">${label[i.status]?`<span class="tag ${i.status}">${label[i.status]}</span>`:""}${i.rating?`<span class="stars" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}/10</span>`:""}</div>`:""}
+${editor(i)}
 </li>`).join("");
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
+  document.getElementById("owner").innerHTML=token?`Editing as owner · <button id="signout">Sign out</button>`:`<button id="signin">Owner sign-in</button>`;
+  document.getElementById(token?"signout":"signin").onclick=token?signOut:signIn;
 }
+const b64e=s=>btoa(unescape(encodeURIComponent(s))),b64d=s=>decodeURIComponent(escape(atob(s.replace(/\n/g,""))));
+const gh=(url,opt={})=>fetch(url,{...opt,headers:{Authorization:"Bearer "+token,Accept:"application/vnd.github+json",...(opt.headers||{})},cache:"no-store"});
+async function signIn(){
+  const t=prompt("Paste a fine-grained GitHub token with Contents read & write on "+REPO+" only. It stays in this browser.");
+  if(!t)return;token=t.trim();
+  const r=await gh("https://api.github.com/repos/"+REPO).catch(()=>null);const j=r&&r.ok?await r.json():null;
+  if(!j||!j.permissions||!j.permissions.push){token=null;toast("That token can't edit "+REPO+".");return}
+  store.set("wl_token",token);toast("Signed in. Pick a status or rating on any card.");render();
+}
+function signOut(){token=null;store.set("wl_token",null);render()}
+async function saveEdit(k,w,v){
+  const i=items.find(x=>keyOf(x)===k);if(!i)return;
+  const edit={type:i.type,title:i.title,updated:new Date().toISOString()};
+  if(w==="status"){if(!v)return;edit.status=v;i.status=v}else{edit.rating=v?Number(v):null;i.rating=v?Number(v):undefined}
+  i.updated=edit.updated;saving.add(k);render();
+  for(let n=0;n<3;n++){
+    const r=await gh(API);let sha,edits=[];
+    if(r.ok){const j=await r.json();sha=j.sha;try{edits=JSON.parse(b64d(j.content)).edits||[]}catch{}}
+    else if(r.status!==404){toast(r.status===401?"Token expired. Sign in again.":"Couldn't save ("+r.status+").");if(r.status===401)signOut();saving.delete(k);render();return}
+    const prev=edits.find(e=>e.type===edit.type&&e.title.toLowerCase().trim()===edit.title.toLowerCase().trim());
+    if(prev)Object.assign(prev,edit);else edits.push(edit);
+    const put=await gh(API,{method:"PUT",body:JSON.stringify({message:"Web edit: "+i.title,content:b64e(JSON.stringify({edits},null,2)+"\n"),...(sha?{sha}:{})})});
+    if(put.ok){saving.delete(k);toast("Saved "+i.title+". Obsidian picks it up within ~5 min.");render();return}
+    if(put.status!==409&&put.status!==422){toast("Couldn't save ("+put.status+").");break}
+  }
+  saving.delete(k);render();
+}
+document.getElementById("grid").addEventListener("change",e=>{const s=e.target.closest("select[data-k]");if(s)saveEdit(s.dataset.k,s.dataset.w,s.value)});
 document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
-fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{items=d.items||[];
+Promise.all([fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()),fetch("edits.json",{cache:"no-store"}).then(r=>r.ok?r.json():{edits:[]}).catch(()=>({edits:[]}))]).then(([d,e])=>{
+  items=d.items||[];
+  for(const ed of e.edits||[]){const i=items.find(x=>keyOf(x)===ed.type+":"+String(ed.title).toLowerCase().trim());if(!i||(i.updated||"")>=ed.updated)continue;if(ed.status)i.status=ed.status;if("rating" in ed)i.rating=ed.rating||undefined;i.updated=ed.updated}
   document.querySelectorAll(".filters button").forEach(b=>{const v=b.dataset.f;if(["watching","watched","want","unsorted"].includes(v)&&!items.some(i=>i.status===v||i.type===v))b.hidden=true});
-  const plats=[...new Set(items.map(i=>i.platform).filter(Boolean))].sort();
-  plats.forEach(p=>{const b=document.createElement("button");b.textContent=p;b.dataset.p=p;b.setAttribute("aria-pressed","false");b.onclick=()=>{f="p:"+p;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};document.querySelector(".filters").append(b)});if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;render()}).catch(()=>render());
+  [...new Set(items.map(i=>i.platform).filter(Boolean))].sort().forEach(p=>{const b=document.createElement("button");b.textContent=p;b.setAttribute("aria-pressed","false");b.onclick=()=>{f="p:"+p;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()};document.querySelector(".filters").append(b)});
+  if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;render()}).catch(()=>render());
 </script>
 </body>
 </html>
