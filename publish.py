@@ -226,6 +226,15 @@ def merge(items, new, fuzzy=False):
 
 def collect():
     items, v = {}, vault()
+    w = v / "Jobs life/Media Log/Watching" if v else None
+    try:
+        seen = len(os.listdir(w)) if w else "no vault"
+    except OSError as e:
+        seen = repr(e)
+    print(f"{datetime.now():%Y-%m-%d %H:%M} vault={v is not None} watching files={seen}", file=sys.stderr)
+    if v and not isinstance(seen, int):
+        global READ_ERRORS
+        READ_ERRORS += 1
     if v:
         caps = sorted((i for p in (v / "Jobs life/Media Log/Watching").glob("*.md") if (i := captured(frontmatter(p)))),
                       key=lambda i: i.get("date", ""))
