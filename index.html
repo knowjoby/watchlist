@@ -22,6 +22,9 @@ h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
 .filters .sep{width:1px;background:var(--line);margin:4px 4px}
 h3.more{font-size:15px;margin:36px 0 12px;color:var(--muted);font-weight:600}
+.morebtn{display:inline-block;margin-top:16px;font-size:14px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);text-decoration:none}
+.morebtn:hover{border-color:var(--fg)}
+.morebtn span{color:var(--muted);margin-left:4px}
 .filters button{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
 .filters button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;list-style:none;margin:0;padding:0}
@@ -94,7 +97,7 @@ function render(){
   document.getElementById("count").textContent=`${shown.length} title${shown.length===1?"":"s"}`;
   document.getElementById("empty").hidden=shown.length>0;
   let more="";
-  if(T[0]==="watching"&&type==="all"&&!plat){const recent=items.filter(TABS[4][2]).sort(byDate).slice(0,6);if(recent.length)more=`<h3 class="more">Also recently played</h3><ul class="grid">${recent.map(card).join("")}</ul>`}
+  if(T[0]==="watching"&&type==="all"&&!plat){const done=items.filter(TABS[1][2]).sort(byDate);if(done.length)more=`<h3 class="more">Recently watched</h3><ul class="grid">${done.slice(0,5).map(card).join("")}</ul>`+(done.length>5?`<a class="morebtn" href="#watched">More watched <span>${done.length}</span></a>`:"")}
   document.getElementById("more").innerHTML=more;
 }
 document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button[data-k]");if(!b)return;const [g,v]=[b.dataset.k.slice(0,1),b.dataset.k.slice(2)];if(g==="t")type=v;else plat=plat===v?"":v;render()});
