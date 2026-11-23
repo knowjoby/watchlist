@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watchlist — knowjoby</title>
+<meta name="description" content="Movies and web series I'm watching, have watched, or want to watch.">
+<style>
+:root{--bg:#fafaf9;--card:#fff;--fg:#1c1917;--muted:#57534e;--line:#e7e5e4;--accent:#2563eb;--tag:#f5f5f4;--star:#d97706}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--card:#1c1917;--fg:#f5f5f4;--muted:#a8a29e;--line:#292524;--accent:#60a5fa;--tag:#292524;--star:#fbbf24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:48px 16px 64px}
+h1{margin:0 0 6px;font-size:clamp(28px,5vw,40px);letter-spacing:-.02em}
+.sub{margin:0 0 24px;color:var(--muted)}
+.sub a{color:var(--accent)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:inherit;font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.card{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h2{margin:0;font-size:17px}
+.card h2 small{color:var(--muted);font-weight:400}
+.card p{margin:0;color:var(--muted);font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:auto;font-size:12.5px}
+.tag{background:var(--tag);padding:2px 8px;border-radius:999px;color:var(--muted)}
+.watching{color:var(--accent);background:transparent;border:1px solid currentColor}
+.stars{margin-left:auto;color:var(--star);letter-spacing:1px}
+.empty{color:var(--muted);padding:32px 0}
+footer{margin-top:40px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<h1>Watchlist</h1>
+<p class="sub">Movies and web series I'm watching, have watched, or want to watch. More of my <a href="https://knowjoby.github.io/creations/">creations</a>.</p>
+<div class="filters" role="group" aria-label="Filter">
+<button data-f="all" aria-pressed="true">All</button>
+<button data-f="movie" aria-pressed="false">Movies</button>
+<button data-f="series" aria-pressed="false">Series</button>
+<button data-f="watching" aria-pressed="false">Watching</button>
+<button data-f="watched" aria-pressed="false">Watched</button>
+<button data-f="want" aria-pressed="false">Want to watch</button>
+</div>
+<ul class="grid" id="grid"></ul>
+<p class="empty" id="empty" hidden>Nothing here yet.</p>
+<footer id="updated"></footer>
+</main>
+<script>
+const label={want:"Want to watch",watching:"Watching",watched:"Watched"};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+let items=[],f="all";
+function render(){
+  const shown=items.filter(i=>f==="all"||i.type===f||i.status===f);
+  document.getElementById("grid").innerHTML=shown.map(i=>`<li class="card">
+<h2>${esc(i.title)}${i.year?` <small>${i.year}</small>`:""}</h2>
+${i.take?`<p>${esc(i.take)}</p>`:""}
+<div class="meta"><span class="tag">${i.type==="series"?"Series":"Movie"}</span>${i.platform?`<span class="tag">${esc(i.platform)}</span>`:""}<span class="tag ${i.status}">${label[i.status]}</span>${i.rating?`<span class="stars" aria-label="${i.rating} of 5">${"★".repeat(i.rating)}${"☆".repeat(5-i.rating)}</span>`:""}</div></li>`).join("");
+  document.getElementById("empty").hidden=shown.length>0;
+}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{f=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+fetch("watchlist.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{items=d.items||[];if(d.updated)document.getElementById("updated").textContent="Updated "+d.updated;render()}).catch(()=>render());
+</script>
+</body>
+</html>
