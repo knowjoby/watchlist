@@ -74,8 +74,8 @@ try{localStorage.removeItem("wl_token")}catch{}
 let items=[],tab="watching",type="all",plat="";
 const byDate=(a,b)=>(b.date||"").localeCompare(a.date||"")||a.title.localeCompare(b.title);
 const sorter=t=>t==="watched"?(a,b)=>(b.rating||0)-(a.rating||0)||byDate(a,b):byDate;
-// Watched means finished: show it as 100% whatever the sampled playback reached.
-const card=j=>{const i=j.status==="watched"?{...j,progress:100}:j;return card0(i)};
+// Watched means finished: no progress bar or % — the date and time played still show.
+const card=j=>{const i=j.status==="watched"?{...j,progress:null}:j;return card0(i)};
 const card0=i=>`<li class="card st-${i.status}"><div class="pwrap">
 ${i.poster?`<img class="poster" loading="lazy" referrerpolicy="no-referrer" src="${esc(i.poster)}" alt="" onerror="this.outerHTML='<div class=&quot;poster noposter&quot;>🎬</div>'">`:`<div class="poster noposter">🎬</div>`}${i.rating?`<span class="score" aria-label="Rated ${i.rating} out of 10">★ ${i.rating}<small>/10</small></span>`:""}</div>
 <p class="kicker">${kind[i.type]||"Title"}${i.platform?" · "+esc(i.platform):""}${i.year?" · "+i.year:""}</p>

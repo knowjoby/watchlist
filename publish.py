@@ -270,6 +270,24 @@ def collect():
             i["status"] = s
         if (n := num((st.get("mediaRatings") or {}).get(k))) and 0 < n <= 10:
             i["rating"] = round(n, 1)
+    # One show captured from two Prime pages ("Time" and "Time - Season 1") is one title, as in Journals.
+    rank = lambda i: (i["status"] != "logged", bool(i.get("rating")), i.get("date", ""))
+    groups = {}
+    for k, i in items.items():
+        if i["type"] in ("movie", "series") and norm(i["title"]):
+            groups.setdefault((i["type"], norm(i["title"])), []).append(k)
+    for keys in groups.values():
+        if len(keys) < 2:
+            continue
+        keys.sort(key=lambda k: rank(items[k]), reverse=True)
+        top = items[keys[0]]
+        for k in keys[1:]:
+            o = items.pop(k)
+            for f in ("poster", "minutes", "progress", "episodes", "platform", "year", "take"):
+                if f in o and f not in top:
+                    top[f] = o[f]
+            if o.get("date", "") > top.get("date", ""):
+                top["date"] = o["date"]
     typed = {norm(i["title"]): i for i in items.values() if i["type"] != "unsorted"}
     for k, i in list(items.items()):
         if i["type"] == "unsorted" and (t := typed.get(norm(i["title"]))):
