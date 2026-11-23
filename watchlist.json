@@ -2,6 +2,35 @@
   "updated": "2026-11-23",
   "items": [
     {
+      "title": "The Park Maniac",
+      "type": "movie",
+      "status": "dropped",
+      "platform": "Prime Video",
+      "date": "2026-11-23",
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/196d7ff52384b4a11864aaee7a4bc40a7c5773017bd9d17359ee3608a1b23ca6.jpg",
+      "updated": "2026-11-23T17:50:02.563Z"
+    },
+    {
+      "title": "Serve The People",
+      "type": "movie",
+      "status": "want",
+      "platform": "Prime Video",
+      "date": "2026-11-23",
+      "minutes": 1,
+      "progress": 1,
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/f3fd4aeba22a98263ab27e24411c862260a223408a878abaaf94ee40991c0b37.jpg",
+      "updated": "2026-11-23T17:47:57.923Z"
+    },
+    {
+      "title": "Search WWW",
+      "type": "series",
+      "status": "want",
+      "platform": "Prime Video",
+      "date": "2026-11-23",
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/8bc4e5e601f20c32203d8e5f6350bffc8364f9209583450e5a59f553b9369aa3.jpg",
+      "updated": "2026-11-23T17:49:06.470Z"
+    },
+    {
       "title": "Hometown Cha-Cha-Cha",
       "type": "series",
       "status": "watching",
@@ -25,16 +54,6 @@
       "episodes": 1,
       "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABWXptTJG9P03IHY26j8SlfI0Ca1JEUXq3FOpOwkVQ4AezD0R7p5s3-m0tSgDHQyScp09_LCiECGeDWH_s65E4dTp7-hGrGvvyACXiAobB0iHxr2RxILqzAXH3g.jpg?r=177",
       "updated": "2026-11-23T17:23:51.413Z"
-    },
-    {
-      "title": "Serve The People",
-      "type": "unsorted",
-      "status": "logged",
-      "platform": "Prime Video",
-      "date": "2026-11-21",
-      "minutes": 1,
-      "progress": 1,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/f3fd4aeba22a98263ab27e24411c862260a223408a878abaaf94ee40991c0b37.jpg"
     },
     {
       "title": "Mr. Bad - Season 1",
@@ -61,23 +80,27 @@
     },
     {
       "title": "BTS: THE RETURN",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "series",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-11-21",
       "minutes": 6,
       "progress": 93,
-      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABY2uvyQz0CkVQU80SnGm8oRlVI8N2-_Rm9HVb24OhK3YlZGDc3HtPIg3aYcT_4DMPWJKexhuH3EyoFqLxhmmw8Ms-aIIG8kXhGTCF6nZ_-U8a62FZXJ9I68YSQ.jpg?r=1c1"
+      "poster": "https://occ-0-3195-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABY2uvyQz0CkVQU80SnGm8oRlVI8N2-_Rm9HVb24OhK3YlZGDc3HtPIg3aYcT_4DMPWJKexhuH3EyoFqLxhmmw8Ms-aIIG8kXhGTCF6nZ_-U8a62FZXJ9I68YSQ.jpg?r=1c1",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:47:36.153Z"
     },
     {
       "title": "BTS THE COMEBACK LIVE | ARIRANG",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "series",
+      "status": "watched",
       "platform": "Netflix",
       "date": "2026-11-21",
       "minutes": 30,
       "progress": 90,
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABW9N6RUZ8-FDGwMnbPQKrQkWSEbztwf4uD32DjydMVlbhzOS3MRLZYrh4ad70P_Bwe9HhEPJkzWmYv_8DIyT-2-Z_xRswpDo1fGBqUdJrV2WxuWNsAxNsViV2Q.jpg?r=55d"
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABW9N6RUZ8-FDGwMnbPQKrQkWSEbztwf4uD32DjydMVlbhzOS3MRLZYrh4ad70P_Bwe9HhEPJkzWmYv_8DIyT-2-Z_xRswpDo1fGBqUdJrV2WxuWNsAxNsViV2Q.jpg?r=55d",
+      "rating": 10.0,
+      "updated": "2026-11-23T17:47:22.113Z"
     },
     {
       "title": "Shine on Me",
@@ -93,13 +116,15 @@
     },
     {
       "title": "Head Over Heels",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "series",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-20",
       "minutes": 0,
       "progress": 17,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/a4de00b9ca912728d5f3a37f1c541b6cbbb36b42f370a6e1d7abaf2ccb973e60.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/a4de00b9ca912728d5f3a37f1c541b6cbbb36b42f370a6e1d7abaf2ccb973e60.jpg",
+      "rating": 8.0,
+      "updated": "2026-11-23T17:48:08.452Z"
     },
     {
       "title": "When the Phone Rings",
@@ -114,21 +139,22 @@
     },
     {
       "title": "See You at Work Tomorrow!",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "series",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-12",
       "minutes": 34,
       "progress": 32,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/9c37f9650d4391e34d8a767acf9b0ce17026e5cb22752a074c1991590a039869.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/9c37f9650d4391e34d8a767acf9b0ce17026e5cb22752a074c1991590a039869.jpg",
+      "updated": "2026-11-23T17:48:28.160Z"
     },
     {
-      "title": "Search WWW",
-      "type": "unsorted",
+      "title": "Dexter: Resurrection",
+      "type": "series",
       "status": "logged",
       "platform": "Prime Video",
-      "date": "2026-11-10",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/8bc4e5e601f20c32203d8e5f6350bffc8364f9209583450e5a59f553b9369aa3.jpg"
+      "date": "2026-11-12",
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5933f57c589e165463950e0fb25d590fcd50d7fa8238aa6fadbc8cc7ccc136f.jpg"
     },
     {
       "title": "Final Table",
@@ -153,11 +179,12 @@
     },
     {
       "title": "100 Days My Prince",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "series",
+      "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-10",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/92cab6e4a8d1eb786ec95a7752e498c0c037a1b6559f417580eb1efa6e60fe53.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/92cab6e4a8d1eb786ec95a7752e498c0c037a1b6559f417580eb1efa6e60fe53.jpg",
+      "updated": "2026-11-23T17:48:39.685Z"
     },
     {
       "title": "Weightlifting Fairy Kim Bok Joo",
@@ -173,13 +200,14 @@
     },
     {
       "title": "The Mongoose",
-      "type": "unsorted",
-      "status": "logged",
+      "type": "movie",
+      "status": "paused",
       "platform": "Prime Video",
       "date": "2026-11-09",
       "minutes": 3,
       "progress": 4,
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/88432c513a5f51989405e6a384fae6443012cfd34a894e66ada6af236cf127d6.jpg"
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/88432c513a5f51989405e6a384fae6443012cfd34a894e66ada6af236cf127d6.jpg",
+      "updated": "2026-11-23T17:49:12.534Z"
     },
     {
       "title": "Hidden Love",
@@ -439,7 +467,7 @@
       "year": 2026,
       "date": "2026-10-20",
       "poster": "https://resizing.flixster.com/R2c-hSJpIDhifCMsLn-s8VEGtZc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjU5ZjEwNzQtYTJhMC00YjkyLTlkNTAtZjVhNWQ1OGU5MGI5LmpwZw==",
-      "updated": "2026-11-23T17:29:38.259Z"
+      "updated": "2026-11-23T17:50:24.205Z"
     },
     {
       "title": "The Most Beautiful Girl in the World",
@@ -503,15 +531,16 @@
       "year": 2024,
       "date": "2026-10-19",
       "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p26329324_b_v12_af.jpg",
-      "updated": "2026-11-23T17:29:35.238Z"
+      "updated": "2026-11-23T17:50:15.517Z"
     },
     {
       "title": "Love from 9 to 5",
       "type": "series",
-      "status": "logged",
+      "status": "dropped",
       "platform": "Netflix",
       "date": "2026-10-19",
-      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXHrRrCWb_kmy0UFbVywesG8a2bGBZoRP2s6FDSFrAuW39jeITE20WPjIjfLNCwl_a0gKhypdC8-UZn2vdXIAQjgvdC28RlA4-iZb4MAipx2yp-pmqOY3OEZjQ.jpg?r=640"
+      "poster": "https://occ-0-3663-3662.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABXHrRrCWb_kmy0UFbVywesG8a2bGBZoRP2s6FDSFrAuW39jeITE20WPjIjfLNCwl_a0gKhypdC8-UZn2vdXIAQjgvdC28RlA4-iZb4MAipx2yp-pmqOY3OEZjQ.jpg?r=640",
+      "updated": "2026-11-23T17:49:38.844Z"
     },
     {
       "title": "Deadloch",
@@ -519,7 +548,8 @@
       "status": "want",
       "year": 2023,
       "date": "2026-10-19",
-      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24689968_b_v8_af.jpg"
+      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p24689968_b_v8_af.jpg",
+      "updated": "2026-11-23T17:50:12.967Z"
     },
     {
       "title": "Cupertino",
@@ -528,7 +558,7 @@
       "year": 2026,
       "date": "2026-10-19",
       "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p32898304_b_v12_aa.jpg",
-      "updated": "2026-11-23T17:29:41.171Z"
+      "updated": "2026-11-23T17:50:09.712Z"
     },
     {
       "title": "A Perfect Story",
@@ -555,14 +585,6 @@
       "date": "2026-10-18",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/93ab27f100618f18c930ea6936f175b8d89a1ad7e0a669a20a2c7533542aa00a.jpg",
       "updated": "2026-11-23T17:28:36.758Z"
-    },
-    {
-      "title": "The Park Maniac",
-      "type": "unsorted",
-      "status": "logged",
-      "platform": "Prime Video",
-      "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/196d7ff52384b4a11864aaee7a4bc40a7c5773017bd9d17359ee3608a1b23ca6.jpg"
     },
     {
       "title": "Paul- Season 1",
