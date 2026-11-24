@@ -402,4 +402,15 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # Always exit 0: a non-zero exit makes the WatchlistSync applet show an error dialog and hang,
+    # which blocks every later scheduled run. Errors still go to publish.log.
+    try:
+        main()
+    except subprocess.CalledProcessError as e:
+        print(f"{datetime.now():%Y-%m-%d %H:%M} failed: {' '.join(map(str, e.cmd))}\n{(e.stderr or '').strip()}")
+    except SystemExit as e:
+        if e.code not in (None, 0):
+            print(f"{datetime.now():%Y-%m-%d %H:%M} stopped (exit {e.code}); will retry next run.")
+    except Exception:
+        import traceback
+        traceback.print_exc()
