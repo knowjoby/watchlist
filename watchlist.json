@@ -1,6 +1,19 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "items": [
+    {
+      "title": "Hometown Cha-Cha-Cha",
+      "type": "series",
+      "status": "watching",
+      "platform": "Netflix",
+      "date": "2026-11-24",
+      "minutes": 66,
+      "progress": 59,
+      "episodes": 2,
+      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABZ9jyqu9P1GZ9vjMCT5Gb5Jf4PArluPRFczOSFwefGeHWaAaays8-Ws3iYaagfl4-aQ2gNPe-G5T6wP0A5AqgsWoAHBY_yj4dzapnk0pFUW7iv4z05nQeZKpXw.jpg?r=120",
+      "rating": 9.0,
+      "updated": "2026-11-23T17:30:11.736Z"
+    },
     {
       "title": "The Park Maniac",
       "type": "movie",
@@ -29,19 +42,6 @@
       "date": "2026-11-23",
       "poster": "https://m.media-amazon.com/images/S/pv-target-images/8bc4e5e601f20c32203d8e5f6350bffc8364f9209583450e5a59f553b9369aa3.jpg",
       "updated": "2026-11-23T18:09:57.047Z"
-    },
-    {
-      "title": "Hometown Cha-Cha-Cha",
-      "type": "series",
-      "status": "watching",
-      "platform": "Netflix",
-      "date": "2026-11-23",
-      "minutes": 64,
-      "progress": 47,
-      "episodes": 2,
-      "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABZ9jyqu9P1GZ9vjMCT5Gb5Jf4PArluPRFczOSFwefGeHWaAaays8-Ws3iYaagfl4-aQ2gNPe-G5T6wP0A5AqgsWoAHBY_yj4dzapnk0pFUW7iv4z05nQeZKpXw.jpg?r=120",
-      "rating": 9.0,
-      "updated": "2026-11-23T17:30:11.736Z"
     },
     {
       "title": "Sunshine Through the Rain",
