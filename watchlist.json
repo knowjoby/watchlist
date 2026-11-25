@@ -20,7 +20,6 @@
       "status": "dropped",
       "platform": "Prime Video",
       "date": "2026-11-23",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/196d7ff52384b4a11864aaee7a4bc40a7c5773017bd9d17359ee3608a1b23ca6.jpg",
       "updated": "2026-11-23T17:50:02.563Z"
     },
     {
@@ -604,7 +603,6 @@
       "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5bfdfa03f97ccb8be70f7b2ad4955fbd725aa752084af75ac74a1a2926686c3.png",
       "updated": "2026-11-23T17:28:27.518Z"
     },
     {
@@ -660,7 +658,6 @@
       "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-16",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/40e274a42079222c662efded33193ca4baef6c6427e47d67b3c88d4b187a00ab.jpg",
       "rating": 10.0,
       "updated": "2026-11-23T17:29:08.565Z"
     },
