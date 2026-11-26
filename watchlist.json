@@ -7,7 +7,7 @@
       "status": "watching",
       "platform": "Netflix",
       "date": "2026-11-26",
-      "minutes": 166,
+      "minutes": 167,
       "progress": 65,
       "episodes": 3,
       "poster": "https://occ-0-3662-3663.1.nflxso.net/dnm/api/v6/MgXQGyNr1xbI8tJSYiMWv5kXg5g/AAAABZ9jyqu9P1GZ9vjMCT5Gb5Jf4PArluPRFczOSFwefGeHWaAaays8-Ws3iYaagfl4-aQ2gNPe-G5T6wP0A5AqgsWoAHBY_yj4dzapnk0pFUW7iv4z05nQeZKpXw.jpg?r=120",
@@ -183,6 +183,7 @@
       "status": "want",
       "platform": "Prime Video",
       "date": "2026-11-10",
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/92cab6e4a8d1eb786ec95a7752e498c0c037a1b6559f417580eb1efa6e60fe53.jpg",
       "updated": "2026-11-23T17:48:39.685Z"
     },
     {
