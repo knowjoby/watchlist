@@ -601,6 +601,7 @@
       "status": "paused",
       "platform": "Prime Video",
       "date": "2026-10-18",
+      "poster": "https://m.media-amazon.com/images/S/pv-target-images/d5bfdfa03f97ccb8be70f7b2ad4955fbd725aa752084af75ac74a1a2926686c3.png",
       "updated": "2026-11-23T17:28:27.518Z"
     },
     {
@@ -609,7 +610,6 @@
       "status": "watched",
       "platform": "Prime Video",
       "date": "2026-10-17",
-      "poster": "https://m.media-amazon.com/images/S/pv-target-images/0627f6d742759bf51af05a2657fdfe5b6ef72a905e036b7b321da601b7670371.jpg",
       "rating": 10.0,
       "updated": "2026-11-23T17:28:55.936Z"
     },
